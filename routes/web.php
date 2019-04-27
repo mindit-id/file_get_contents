@@ -106,7 +106,7 @@ $router->post('/file_get_contents_uptobox', function (Request $request) use ($ro
     }
     catch(RequestExeption $e){
         if($e->hasResponse()){
-            return json_decode($e->getResponse()->getBody()->getContent(), true);
+            return $response->getBody();
         }
         return false;
     }
